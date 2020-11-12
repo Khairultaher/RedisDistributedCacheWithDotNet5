@@ -22,11 +22,11 @@ namespace RedisDistributedCacheWithDotNet5.Controllers
         }
 
         // GET: api/<MoviesController>
-        [HttpGet("{actorname}")]
-        public async Task<IActionResult> GetAsync(string actorname)
+        [HttpGet("{writtername}")]
+        public async Task<IActionResult> GetAsync(string writtername)
         {
             //await Task.Delay(100);
-            var cacheKey = actorname.ToLower();
+            var cacheKey = writtername.ToLower();
             List<string> bookList = new List<string>();
             string serializedBooks;
             var encodedBooks = await distributedCache.GetAsync(cacheKey);
